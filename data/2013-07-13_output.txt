@@ -1,0 +1,248 @@
+Output from 2013-07-13 
+
+From Cluster: 438, 0.013104524180967239
+To Cluster: 548
+ID	|Size	|	keyword:frequency:tfidf,
+548	|42	|Rolelevel:3250:1.0, xiulian:2138:1.0, RoleAge:1010:1.0, Gender:62:1.0, 
+
+
+From Cluster: 438, 0.5965678627145086
+To Cluster: 545
+ID	|Size	|	keyword:frequency:tfidf,
+545	|1912	|Rolelevel:177268:1.0, xiulian:162257:1.0, RoleAge:97445:1.0, Gender:2737:1.0, 
+
+
+From Cluster: 438, 3.1201248049921997E-4
+To Cluster: 544
+ID	|Size	|	keyword:frequency:tfidf,
+544	|1	|xiulian:80:1.0, RoleAge:79:1.0, Rolelevel:34:1.0, Gender:2:1.0, 
+
+
+From Cluster: 438, 0.39001560062402496
+To Cluster: 543
+ID	|Size	|	keyword:frequency:tfidf,
+543	|1250	|xiulian:141434:1.0, Rolelevel:116488:1.0, RoleAge:58132:1.0, Gender:1823:1.0, 
+
+
+From Cluster: 437, 0.0026155187445510027
+To Cluster: 545
+ID	|Size	|	keyword:frequency:tfidf,
+545	|3	|Rolelevel:144:0.9048374180359595, RoleAge:119:0.9048374180359595, xiulian:91:0.9048374180359595, Gender:4:0.9048374180359595, 
+
+
+From Cluster: 437, 0.6521360069747166
+To Cluster: 544
+ID	|Size	|	keyword:frequency:tfidf,
+544	|748	|Rolelevel:74081:0.9048374180359595, RoleAge:65452:0.9048374180359595, xiulian:40235:0.9048374180359595, Gender:1085:0.9048374180359595, 
+
+
+From Cluster: 437, 8.718395815170009E-4
+To Cluster: 543
+ID	|Size	|	keyword:frequency:tfidf,
+543	|1	|Rolelevel:26:0.9048374180359595, xiulian:23:0.9048374180359595, RoleAge:20:0.9048374180359595, Gender:2:0.9048374180359595, 
+
+
+From Cluster: 437, 0.24934612031386225
+To Cluster: 437
+ID	|Size	|	keyword:frequency:tfidf,
+437	|286	|Rolelevel:28251:0.9126991976573047, RoleAge:25272:0.9126991976573047, xiulian:11607:0.9126991976573047, Gender:413:0.9126991976573047, 
+
+
+From Cluster: 437, 0.0950305143853531
+To Cluster: 349
+ID	|Size	|	keyword:frequency:tfidf,
+349	|109	|Rolelevel:10667:0.9127652720272496, RoleAge:7631:0.9127652720272496, xiulian:4281:0.9127652720272496, Gender:151:0.9127652720272496, 
+
+
+From Cluster: 436, 0.9082473557848291
+To Cluster: 548
+ID	|Size	|	keyword:frequency:tfidf,
+548	|13997	|Rolelevel:710520:0.9048374180359595, xiulian:239386:0.9048374180359595, RoleAge:130765:0.9048374180359595, Gender:19621:0.9048374180359595, 
+
+
+From Cluster: 436, 0.007072870027902148
+To Cluster: 545
+ID	|Size	|	keyword:frequency:tfidf,
+545	|109	|Rolelevel:9484:0.913489185466813, xiulian:5010:0.913489185466813, RoleAge:3709:0.913489185466813, Gender:151:0.913489185466813, 
+
+
+From Cluster: 436, 0.03731101161508014
+To Cluster: 542
+ID	|Size	|	keyword:frequency:tfidf,
+542	|575	|Rolelevel:35389:0.913489185466813, RoleAge:6810:0.913489185466813, xiulian:5258:0.913489185466813, Gender:797:0.913489185466813, 
+
+
+From Cluster: 436, 0.047368762572188694
+To Cluster: 349
+ID	|Size	|	keyword:frequency:tfidf,
+349	|730	|Rolelevel:56815:0.9127652715704119, RoleAge:18724:0.9127652715704119, xiulian:17169:0.9127652715704119, Gender:1002:0.9127652715704119, 
+
+
+From Cluster: 546, 1.0
+To Cluster: 546
+ID	|Size	|	keyword:frequency:tfidf,
+546	|0	|
+
+
+From Cluster: 545, 1.0
+To Cluster: 545
+ID	|Size	|	keyword:frequency:tfidf,
+545	|0	|
+
+
+From Cluster: 544, 1.0
+To Cluster: 544
+ID	|Size	|	keyword:frequency:tfidf,
+544	|0	|
+
+
+From Cluster: 543, 1.0
+To Cluster: 543
+ID	|Size	|	keyword:frequency:tfidf,
+543	|0	|
+
+
+From Cluster: 542, 1.0
+To Cluster: 546
+ID	|Size	|	keyword:frequency:tfidf,
+546	|2315	|xiulian:305819:1.0, Rolelevel:109147:1.0, RoleAge:19390:1.0, Gender:3472:1.0, 
+
+
+From Cluster: 547, 1.0
+To Cluster: 547
+ID	|Size	|	keyword:frequency:tfidf,
+547	|0	|
+
+
+From Cluster: 349, 0.30466666666666664
+To Cluster: 546
+ID	|Size	|	keyword:frequency:tfidf,
+546	|457	|xiulian:88893:0.9048374180359595, Rolelevel:38606:0.9048374180359595, RoleAge:14496:0.9048374180359595, Gender:697:0.9048374180359595, 
+
+
+From Cluster: 349, 0.0013333333333333333
+To Cluster: 544
+ID	|Size	|	keyword:frequency:tfidf,
+544	|2	|xiulian:33:0.913489185466813, RoleAge:28:0.913489185466813, Rolelevel:4:0.913489185466813, Gender:4:0.913489185466813, 
+
+
+From Cluster: 349, 0.694
+To Cluster: 543
+ID	|Size	|	keyword:frequency:tfidf,
+543	|1041	|xiulian:178056:0.913489185466813, Rolelevel:95576:0.913489185466813, RoleAge:50996:0.913489185466813, Gender:1578:0.913489185466813, 
+
+
+From Cluster: 451, 0.4793108752499615
+To Cluster: 548
+ID	|Size	|	keyword:frequency:tfidf,
+548	|3116	|Rolelevel:171740:0.913489185466813, xiulian:122094:0.913489185466813, RoleAge:24971:0.913489185466813, Gender:4357:0.913489185466813, 
+
+
+From Cluster: 451, 0.3202584217812644
+To Cluster: 546
+ID	|Size	|	keyword:frequency:tfidf,
+546	|2082	|xiulian:126853:0.913489185466813, Rolelevel:102635:0.913489185466813, RoleAge:12236:0.913489185466813, Gender:2991:0.913489185466813, 
+
+
+From Cluster: 451, 0.20043070296877402
+To Cluster: 543
+ID	|Size	|	keyword:frequency:tfidf,
+543	|1303	|xiulian:107067:0.9126991976573047, Rolelevel:100942:0.9126991976573047, RoleAge:24440:0.9126991976573047, Gender:1859:0.9126991976573047, 
+
+
+From Cluster: 121, 0.006369426751592357
+To Cluster: 547
+ID	|Size	|	keyword:frequency:tfidf,
+547	|1	|RoleAge:39:1.0, xiulian:13:1.0, Rolelevel:8:1.0, Gender:2:1.0, 
+
+
+From Cluster: 121, 0.01910828025477707
+To Cluster: 544
+ID	|Size	|	keyword:frequency:tfidf,
+544	|3	|RoleAge:216:0.9126991976573047, Rolelevel:107:0.9126991976573047, xiulian:95:0.9126991976573047, Gender:6:0.9126991976573047, 
+
+
+From Cluster: 121, 0.050955414012738856
+To Cluster: 438
+ID	|Size	|	keyword:frequency:tfidf,
+438	|8	|RoleAge:565:0.9127647211181605, Rolelevel:491:0.9127647211181605, xiulian:125:0.9127647211181605, Gender:13:0.9127647211181605, 
+
+
+From Cluster: 121, 0.5286624203821656
+To Cluster: 437
+ID	|Size	|	keyword:frequency:tfidf,
+437	|83	|RoleAge:7402:0.9127713026293593, Rolelevel:5689:0.9127713026293593, xiulian:2228:0.9127713026293593, Gender:135:0.9127713026293593, 
+
+
+From Cluster: 121, 0.3885350318471338
+To Cluster: 121
+ID	|Size	|	keyword:frequency:tfidf,
+121	|61	|RoleAge:5024:0.9127652716086226, Rolelevel:3587:0.9127652716086226, xiulian:1008:0.9127652716086226, Gender:93:0.9127652716086226, 
+
+
+From Cluster: 121, 0.006369426751592357
+To Cluster: 349
+ID	|Size	|	keyword:frequency:tfidf,
+349	|1	|RoleAge:42:0.9127652716121104, Rolelevel:37:0.9127652716121104, xiulian:15:0.9127652716121104, Gender:1:0.9127652716121104, 
+
+
+From Cluster: 548, 1.0
+To Cluster: 548
+ID	|Size	|	keyword:frequency:tfidf,
+548	|0	|
+
+
+From Cluster: 336, 8.183306055646482E-4
+To Cluster: 545
+ID	|Size	|	keyword:frequency:tfidf,
+545	|6	|Rolelevel:421:0.9126991976573047, xiulian:218:0.9126991976573047, RoleAge:206:0.9126991976573047, Gender:8:0.9126991976573047, 
+
+
+From Cluster: 336, 0.03668848881614839
+To Cluster: 542
+ID	|Size	|	keyword:frequency:tfidf,
+542	|269	|Rolelevel:22261:0.9126991976573047, RoleAge:8969:0.9126991976573047, xiulian:2707:0.9126991976573047, Gender:380:0.9126991976573047, 
+
+
+From Cluster: 336, 1.3638843426077467E-4
+To Cluster: 451
+ID	|Size	|	keyword:frequency:tfidf,
+451	|1	|Rolelevel:42:0.9127713026293593, RoleAge:38:0.9127713026293593, xiulian:6:0.9127713026293593, Gender:2:0.9127713026293593, 
+
+
+From Cluster: 336, 0.025777414075286414
+To Cluster: 438
+ID	|Size	|	keyword:frequency:tfidf,
+438	|189	|Rolelevel:17626:0.9127653218554816, RoleAge:10947:0.9127653218554816, xiulian:3170:0.9127653218554816, Gender:257:0.9127653218554816, 
+
+
+From Cluster: 336, 0.0036824877250409165
+To Cluster: 437
+ID	|Size	|	keyword:frequency:tfidf,
+437	|27	|Rolelevel:2197:0.9127647211181605, RoleAge:1812:0.9127647211181605, xiulian:669:0.9127647211181605, Gender:35:0.9127647211181605, 
+
+
+From Cluster: 336, 0.9328968903436988
+To Cluster: 349
+ID	|Size	|	keyword:frequency:tfidf,
+349	|6840	|Rolelevel:605621:0.9127652716083043, RoleAge:300595:0.9127652716083043, xiulian:152993:0.9127652716083043, Gender:9486:0.9127652716083043, 
+
+
+From Cluster: 370, 0.967391304347826
+To Cluster: 547
+ID	|Size	|	keyword:frequency:tfidf,
+547	|267	|RoleAge:10399:0.9048374180359595, Rolelevel:2220:0.9048374180359595, Gender:405:0.9048374180359595, xiulian:393:0.9048374180359595, 
+
+
+From Cluster: 370, 0.014492753623188406
+To Cluster: 542
+ID	|Size	|	keyword:frequency:tfidf,
+542	|4	|RoleAge:20:0.9127713026293593, Rolelevel:8:0.9127713026293593, Gender:8:0.9127713026293593, xiulian:4:0.9127713026293593, 
+
+
+From Cluster: 370, 0.018115942028985508
+To Cluster: 370
+ID	|Size	|	keyword:frequency:tfidf,
+370	|5	|RoleAge:390:0.9127647211181605, Rolelevel:131:0.9127647211181605, Gender:9:0.9127647211181605, xiulian:5:0.9127647211181605, 
+
+
