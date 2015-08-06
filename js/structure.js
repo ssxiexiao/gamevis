@@ -102,3 +102,44 @@ function Stream() {
 	this.yTop = [];
 	this.x = [];
 }
+
+function Node(){
+	this.clusterId = -1;
+	this.next = -1;
+	this.pre = -1;
+	this.yInputTop = -1;
+	this.yInputEnd = -1;
+	this.yOutputTop = -1;
+	this.yOutputEnd = -1;
+	this.x = -1;
+}
+Node.prototype.copy = function(){
+	var node = new Node();
+	node.clusterId = this.clusterId;
+	node.next = this.next;
+	node.pre = this.pre;
+	node.yInputEnd = this.yInputEnd;
+	node.yInputTop = this.yInputTop;
+	node.yOutputEnd = this.yOutputEnd;
+	node.yOutputTop = this.yOutputTop;
+	node.x = this.x;
+	return node;
+};
+
+function ClusterStream(){
+	this.nodeStream = [];
+}
+ClusterStream.prototype.copy = function(){
+	var clusterStream = new ClusterStream();
+	for(var i = 0; i < this.nodeStream.length; i++){
+		var node = this.nodeStream[i].copy();
+		clusterStream.nodeStream.push(node);
+	}
+	return clusterStream;
+};
+
+function Segement(){
+	this.node1 = {};
+	this.node2 = {};
+}
+
