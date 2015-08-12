@@ -79,7 +79,7 @@ Axe.prototype.setText = function(str) {
 		var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
 		text.innerHTML = str[i];
 		text.setAttribute('text-anchor', 'middle');
-		var position = this.getPosition((i + 1.0) / (len + 1.0));
+		var position = this.getPosition((i + 0.5) / len);
 		this.textPosition.push(position);
 		text.setAttribute('x', position.x);
 		text.setAttribute('y', position.y);
@@ -112,6 +112,8 @@ function Node(){
 	this.yOutputTop = -1;
 	this.yOutputEnd = -1;
 	this.x = -1;
+	this.size = 0;
+	this.label = null;
 }
 Node.prototype.copy = function(){
 	var node = new Node();
@@ -123,6 +125,8 @@ Node.prototype.copy = function(){
 	node.yOutputEnd = this.yOutputEnd;
 	node.yOutputTop = this.yOutputTop;
 	node.x = this.x;
+	node.size = this.size;
+	node.label = this.label;
 	return node;
 };
 

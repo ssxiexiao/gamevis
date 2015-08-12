@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 		<script type="text/javascript" src="libjs/d3.js"></script>
 		<script type="text/javascript" src="libjs/sankey.js"></script>
+		<link rel="stylesheet" type="text/css" href="style/gamevis.css" />
 		<title>gameVis</title>
 	</head>
 	<body>
+		<div height="30">
+			<span>filter</span>
+			<input type="range" min="0" max="100" value="0" name="streamSize" id='filterByStreamSize' width="300">
+		</div>
 		<script type="text/javascript" src="js/structure.js"></script>
 		<script type="text/javascript" src="js/calculator.js"></script>
 		<script type="text/javascript" src="js/_gamevis.js"></script>
