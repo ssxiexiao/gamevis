@@ -13,7 +13,7 @@ function getValue() {
 }
 
 (function() {
-	var width = 1900,
+	var width = 1800,
 		height = 1200;
 	var rectWidth = 20;
 	var timeAxisPosition = {
@@ -318,7 +318,7 @@ function getValue() {
 						clickLastTime = '';
 
 					var userData = [];
-					for(var i = 0; i < Math.min(3000, obj.labels.length); i++){
+					for(var i = 0; i < Math.min(800, obj.labels.length); i++){
 						userData.push(obj.labels[i]);
 					}
 					d3.select('.user')
