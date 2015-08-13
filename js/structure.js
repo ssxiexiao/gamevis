@@ -28,7 +28,7 @@ Scale.prototype.getValue = function(domainValue) {
 	return value;
 };
 
-function Axe() {
+function Axis() {
 	this.xScale = null;
 	this.yScale = null;
 	this.text = [];
@@ -38,7 +38,7 @@ function Axe() {
 	this.g.appendChild(this.line);
 	console.log(this.g);
 }
-Axe.prototype.setPosition = function(x1, y1, x2, y2) {
+Axis.prototype.setPosition = function(x1, y1, x2, y2) {
 	this.line.setAttribute('x1', x1);
 	this.line.setAttribute('y1', y1);
 	this.line.setAttribute('x2', x2);
@@ -65,7 +65,7 @@ Axe.prototype.setPosition = function(x1, y1, x2, y2) {
 	this.line.setAttribute('stroke-width', '2px');
 	return this;
 };
-Axe.prototype.getPosition = function(p) {
+Axis.prototype.getPosition = function(p) {
 	var x = this.xScale.getValue(p);
 	var y = this.yScale.getValue(p);
 	return {
@@ -73,7 +73,7 @@ Axe.prototype.getPosition = function(p) {
 		y: y
 	};
 };
-Axe.prototype.setText = function(str) {
+Axis.prototype.setText = function(str) {
 	var len = str.length;
 	for (var i = 0; i < len; i++) {
 		var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
@@ -89,7 +89,7 @@ Axe.prototype.setText = function(str) {
 		this.g.appendChild(text);
 	}
 };
-Axe.prototype.clearText = function() {
+Axis.prototype.clearText = function() {
 	for (var i = 0; i < this.text.length; i++) {
 		this.g.removeChild(this.text[i]);
 	}
