@@ -116,6 +116,7 @@ function getValue() {
 		}
 
 		d3.json("data/data.json", function(json) {
+			console.log(json);
 			for (var clusterId in json) {
 				for (var timestamp in json[clusterId]) {
 					json[clusterId][timestamp]['pIn'] = 0;
@@ -275,10 +276,15 @@ function getValue() {
 						x4 = x2,
 						y4 = scale2(node2.yInputEnd),
 						bx1 = (x1 + x2) / 2,
-						by1 = y2,
+						by1 = y1,
 						bx2 = bx1,
-						by2 = y4;
-					var d = 'M' + x1 + ' ' + y1 + 'Q' + bx1 + ' ' + by1 + ' ' + x2 + ' ' + y2 + 'L' + x4 + ' ' + y4 + 'Q' + bx2 + ' ' + by2 + ' ' + x3 + ' ' + y3 + 'L' + x1 + ' ' + y1;
+						by2 = y2,
+						bx3 = (x3 + x4) / 2,
+						by3 = y3,
+						bx4 = bx3,
+						by4 = y4;
+					var d = 'M' + x1 + ' ' + y1 + 'C' + bx1 + ' ' + by1 + ' ' + bx2 + ' ' + by2 + ' ' + x2 + ' ' + y2 
+						+ 'L' + x4 + ' ' + y4 + 'C' + bx4 + ' ' + by4 + ' ' + bx3 + ' ' + by3 + ' ' + x3 + ' ' + y3 + 'L' + x1 + ' ' + y1;
 					return d;
 				})
 				.attr('fill', function(segement) {
@@ -318,7 +324,7 @@ function getValue() {
 						clickLastTime = '';
 
 					var userData = [];
-					for(var i = 0; i < Math.min(800, obj.labels.length); i++){
+					for(var i = 0; i < Math.min(2000, obj.labels.length); i++){
 						userData.push(obj.labels[i]);
 					}
 					d3.select('.user')

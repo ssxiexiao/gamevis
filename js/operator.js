@@ -7,18 +7,20 @@ operator.constructSegements = function(data, timeSeq, index2Cluster, cluster2Ind
 				var node1 = new Node();
 				var node2 = new Node();
 				var segement = new Segement();
+				var pOut = parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]) / parseFloat(data[index][timeSeq[timeIndex]]['size']);
+				var pIn = parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]) /  parseFloat(data[cluster2Index[nextId]][timeSeq[timeIndex + 1]]['size']);
 				node1.clusterId = index2Cluster[index];
 				node2.clusterId = nextId;
 				node1.x = timeIndex;
 				node2.x = timeIndex + 1;
 				node1.yOutputTop = data[index][timeSeq[timeIndex]].pOut;
-				node1.yOutputEnd = data[index][timeSeq[timeIndex]].pOut + parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]);
+				node1.yOutputEnd = data[index][timeSeq[timeIndex]].pOut + pOut;
 				data[index][timeSeq[timeIndex]].pOut = node1.yOutputEnd;
 				node2.yInputTop = data[cluster2Index[nextId]][timeSeq[timeIndex + 1]].pIn;
-				node1.size = parseFloat(data[index][timeSeq[timeIndex]]['size']) * parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]);
+				node1.size = parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]);
 				if (data[cluster2Index[nextId]][timeSeq[timeIndex + 1]]['input'].hasOwnProperty(index2Cluster[index])) {
-					node2.yInputEnd = data[cluster2Index[nextId]][timeSeq[timeIndex + 1]].pIn + parseFloat(data[cluster2Index[nextId]][timeSeq[timeIndex + 1]]['input'][index2Cluster[index]]);
-					node2.size = parseFloat(data[cluster2Index[nextId]][timeSeq[timeIndex + 1]]['size']) * parseFloat(data[cluster2Index[nextId]][timeSeq[timeIndex + 1]]['input'][index2Cluster[index]]);
+					node2.yInputEnd = data[cluster2Index[nextId]][timeSeq[timeIndex + 1]].pIn + pIn;
+					node2.size = parseFloat(data[index][timeSeq[timeIndex]]['output'][nextId]);
 				} else {
 					node2.yInputEnd = node2.yInputTop;
 					node2.size = 0;

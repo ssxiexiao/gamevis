@@ -1,0 +1,104 @@
+Output from 2013-06-01 
+
+From Cluster: 12, 0.9999748263014803
+To Cluster: 15
+ID	|Size	|	keyword:frequency:tfidf,
+15	|39723	|Rolelevel:1611092:1.0, RoleAge:322690:1.0, OnlineTimeAmount:232225:1.0, 
+
+
+From Cluster: 12, 2.5173698519786525E-5
+To Cluster: 8
+ID	|Size	|	keyword:frequency:tfidf,
+8	|1	|Rolelevel:6:0.9127652716121104, RoleAge:4:0.9127652716121104, OnlineTimeAmount:1:0.9127652716121104, 
+
+
+From Cluster: 11, 1.0
+To Cluster: 11
+ID	|Size	|	keyword:frequency:tfidf,
+11	|84	|RoleAge:2673:0.9126991976573047, Rolelevel:240:0.9126991976573047, OnlineTimeAmount:87:0.9126991976573047, 
+
+
+From Cluster: 10, 0.7678571428571429
+To Cluster: 14
+ID	|Size	|	keyword:frequency:tfidf,
+14	|731	|RoleAge:39164:1.0, Rolelevel:35753:1.0, OnlineTimeAmount:880:1.0, 
+
+
+From Cluster: 10, 0.16701680672268907
+To Cluster: 13
+ID	|Size	|	keyword:frequency:tfidf,
+13	|159	|RoleAge:7519:1.0, Rolelevel:6896:1.0, OnlineTimeAmount:357:1.0, 
+
+
+From Cluster: 10, 0.06512605042016807
+To Cluster: 7
+ID	|Size	|	keyword:frequency:tfidf,
+7	|62	|RoleAge:2723:0.9127653218554816, Rolelevel:1956:0.9127653218554816, OnlineTimeAmount:72:0.9127653218554816, 
+
+
+From Cluster: 8, 0.051117068811438786
+To Cluster: 15
+ID	|Size	|	keyword:frequency:tfidf,
+15	|572	|Rolelevel:39534:0.9048374180359595, RoleAge:14937:0.9048374180359595, OnlineTimeAmount:7288:0.9048374180359595, 
+
+
+From Cluster: 8, 0.9488829311885613
+To Cluster: 8
+ID	|Size	|	keyword:frequency:tfidf,
+8	|10618	|Rolelevel:752376:0.9127652716083043, RoleAge:404933:0.9127652716083043, OnlineTimeAmount:119366:0.9127652716083043, 
+
+
+From Cluster: 7, 0.004761904761904762
+To Cluster: 15
+ID	|Size	|	keyword:frequency:tfidf,
+15	|2	|RoleAge:30:0.913489185466813, Rolelevel:26:0.913489185466813, OnlineTimeAmount:9:0.913489185466813, 
+
+
+From Cluster: 7, 0.07142857142857142
+To Cluster: 13
+ID	|Size	|	keyword:frequency:tfidf,
+13	|30	|RoleAge:731:0.9048374180359595, Rolelevel:537:0.9048374180359595, OnlineTimeAmount:55:0.9048374180359595, 
+
+
+From Cluster: 7, 0.02142857142857143
+To Cluster: 11
+ID	|Size	|	keyword:frequency:tfidf,
+11	|9	|RoleAge:152:0.9127713026293593, Rolelevel:28:0.9127713026293593, OnlineTimeAmount:10:0.9127713026293593, 
+
+
+From Cluster: 7, 0.030952380952380953
+To Cluster: 8
+ID	|Size	|	keyword:frequency:tfidf,
+8	|13	|RoleAge:414:0.9127652716086517, Rolelevel:288:0.9127652716086517, OnlineTimeAmount:89:0.9127652716086517, 
+
+
+From Cluster: 7, 0.8714285714285714
+To Cluster: 7
+ID	|Size	|	keyword:frequency:tfidf,
+7	|366	|RoleAge:12503:0.9127652670222639, Rolelevel:6264:0.9127652670222639, OnlineTimeAmount:597:0.9127652670222639, 
+
+
+From Cluster: 6, 0.06989499343708981
+To Cluster: 15
+ID	|Size	|	keyword:frequency:tfidf,
+15	|1491	|Rolelevel:75226:0.9126991976573047, RoleAge:24148:0.9126991976573047, OnlineTimeAmount:2877:0.9126991976573047, 
+
+
+From Cluster: 6, 0.0017813613350834427
+To Cluster: 14
+ID	|Size	|	keyword:frequency:tfidf,
+14	|38	|Rolelevel:2101:0.9048374180359595, RoleAge:2003:0.9048374180359595, OnlineTimeAmount:38:0.9048374180359595, 
+
+
+From Cluster: 6, 0.8647571723232702
+To Cluster: 13
+ID	|Size	|	keyword:frequency:tfidf,
+13	|18447	|Rolelevel:1081207:0.913489185466813, RoleAge:649659:0.913489185466813, OnlineTimeAmount:44295:0.913489185466813, 
+
+
+From Cluster: 6, 0.06356647290455654
+To Cluster: 8
+ID	|Size	|	keyword:frequency:tfidf,
+8	|1356	|Rolelevel:89488:0.91276527160862, RoleAge:47790:0.91276527160862, OnlineTimeAmount:8079:0.91276527160862, 
+
+
