@@ -31,7 +31,7 @@ function getValue() {
 	var svg = null;
 	var graph = null;
 	var timeSeq = [];
-	var allSegements = null;
+	var allSegements = [];
 	var rectData = [];
 	var scale = new Scale();
 	var padding = 10;
@@ -63,7 +63,7 @@ function getValue() {
 		.append('g')
 		.classed('user', true);
 
-	d3.json("data/labels.json", function(labels) {
+	d3.json("data/_labels.json", function(labels) {
 		
 		console.log(labels);
 		for(var timestamp in labels){
@@ -115,7 +115,7 @@ function getValue() {
 			num++;
 		}
 
-		d3.json("data/data.json", function(json) {
+		d3.json("data/_data.json", function(json) {
 			console.log(json);
 			for (var clusterId in json) {
 				for (var timestamp in json[clusterId]) {
@@ -140,8 +140,9 @@ function getValue() {
 					data.push(json[clusterId]);
 				}
 			}
-
-			allSegements = operator.constructSegements(data, timeSeq, index2Cluster, cluster2Index);
+			allSegements = allSegements.concat(operator.constructEmergeSegements(data, timeSeq, index2Cluster, cluster2Index));
+			allSegements = allSegements.concat(operator.constructSegements(data, timeSeq, index2Cluster, cluster2Index));
+			allSegements = allSegements.concat(operator.constructFadeSegements(data, timeSeq, index2Cluster, cluster2Index));
 
 			for(var i = 0; i < allSegements.length; i++){
 				var segement = allSegements[i];
@@ -260,22 +261,51 @@ function getValue() {
 				.append('path')
 				.attr('d', function(segement) {
 					var node1 = segement.node1;
-					var node2 = segement.node2;
-					var scale1 = d3.scale.linear()
-						.range([data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yTop, data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yEnd])
-						.domain([0, 1]);
-					var scale2 = d3.scale.linear()
-						.range([data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yTop, data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yEnd])
-						.domain([0, 1]);
-					var x1 = data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].x + rectWidth / 2,
-						y1 = scale1(node1.yOutputTop),
-						x2 = data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].x - rectWidth / 2,
-						y2 = scale2(node2.yInputTop),
-						x3 = x1,
-						y3 = scale1(node1.yOutputEnd),
-						x4 = x2,
-						y4 = scale2(node2.yInputEnd),
-						bx1 = (x1 + x2) / 2,
+					var node2 = segement.node2;				
+					if(node1.clusterId === -1){
+						var scale2 = d3.scale.linear()
+							.range([data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yTop, data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yEnd])
+							.domain([0, 1]);
+						var y1 = 0,
+							y3 = y1,
+							x1 = (data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].x + data[cluster2Index[node2.clusterId]][timeSeq[node2.x - 1]].x) / 2,
+							x3 = x1,
+							x2 = data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].x - rectWidth / 2,
+							y2 = scale2(node2.yInputTop),
+							x4 = x2,
+							y4 = scale2(node2.yInputEnd);
+						console.log(x1 + ' ' + x3 + ' ' + y1 + ' ' + y3);
+					}
+					else if(node2.clusterId === -1){
+						var scale1 = d3.scale.linear()
+							.range([data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yTop, data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yEnd])
+							.domain([0, 1]);
+						var y2 = height - 300,
+							y4 = y2,
+							x2 = (data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].x + data[cluster2Index[node1.clusterId]][timeSeq[node1.x + 1]].x) / 2,
+							x4 = x2,
+							x1 = data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].x + rectWidth / 2,
+							y1 = scale1(node1.yOutputTop),
+							x3 = x1,
+							y3 = scale1(node1.yOutputEnd);
+					}
+					else{
+						var scale1 = d3.scale.linear()
+							.range([data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yTop, data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].yEnd])
+							.domain([0, 1]);						
+						var scale2 = d3.scale.linear()
+							.range([data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yTop, data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].yEnd])
+							.domain([0, 1]);
+						var y2 = scale2(node2.yInputTop),
+							y4 = scale2(node2.yInputEnd),
+							x2 = data[cluster2Index[node2.clusterId]][timeSeq[node2.x]].x - rectWidth / 2,
+							x4 = x2,
+							x1 = data[cluster2Index[node1.clusterId]][timeSeq[node1.x]].x + rectWidth / 2,
+							y1 = scale1(node1.yOutputTop),
+							x3 = x1,
+							y3 = scale1(node1.yOutputEnd);
+					}
+					var bx1 = (x1 + x2) / 2,
 						by1 = y1,
 						bx2 = bx1,
 						by2 = y2,
@@ -289,7 +319,11 @@ function getValue() {
 				})
 				.attr('fill', function(segement) {
 					var node1 = segement.node1;
-					return colorSpace[node1.clusterId];
+					var node2 = segement.node2;
+					if(node1.clusterId >= 0)
+						return colorSpace[node1.clusterId];
+					else
+						return colorSpace[node2.clusterId];
 				})
 				.attr('fill-opacity', 0.4)
 				.classed('segement', true);
@@ -298,33 +332,33 @@ function getValue() {
 				.selectAll('rect')
 				.on('click', function(obj) {
 
-					d3.select('.path')
-						.selectAll('path')
-						.transition()
-						.duration(1000)
-						.attr('fill-opacity', function(segement) {
-							var size = getValue() * maxStreamSize;
-							var node1 = segement.node1;
-							var node2 = segement.node2;
-							if (node2.size < size)
-								return 0;
-							if (clickLastTime === obj.cluster)
-								return 0.4;
-							if (node1.clusterId === obj.cluster) {
-								return 0.65;
-							} else if (node2.clusterId === obj.cluster) {
-								return 0.65;
-							} else {
-								return 0.1;
-							}
-						});
-					if (clickLastTime != obj.cluster)
-						clickLastTime = obj.cluster;
-					else
-						clickLastTime = '';
+					// d3.select('.path')
+					// 	.selectAll('path')
+					// 	.transition()
+					// 	.duration(1000)
+					// 	.attr('fill-opacity', function(segement) {
+					// 		var size = getValue() * maxStreamSize;
+					// 		var node1 = segement.node1;
+					// 		var node2 = segement.node2;
+					// 		if (node2.size < size)
+					// 			return 0;
+					// 		if (clickLastTime === obj.cluster)
+					// 			return 0.4;
+					// 		if (node1.clusterId === obj.cluster) {
+					// 			return 0.65;
+					// 		} else if (node2.clusterId === obj.cluster) {
+					// 			return 0.65;
+					// 		} else {
+					// 			return 0.1;
+					// 		}
+					// 	});
+					// if (clickLastTime != obj.cluster)
+					// 	clickLastTime = obj.cluster;
+					// else
+					// 	clickLastTime = '';
 
 					var userData = [];
-					for(var i = 0; i < Math.min(2000, obj.labels.length); i++){
+					for(var i = 0; i < Math.min(1000, obj.labels.length); i++){
 						userData.push(obj.labels[i]);
 					}
 					d3.select('.user')
@@ -335,6 +369,21 @@ function getValue() {
 						.attr('fill', 'none')
 						.attr('stroke-width', '1px')
 						.attr('stroke-opacity', 0.2)
+						.attr('d', function(data){
+							var d = 'M';
+							var _num = 0;
+							for(var j in data){
+								var x = coordinate_xScale.getValue(attr2Index[j]/attr_size);
+								var y = coordinate_yScales[j](0) + timeAxisPosition.y1;
+								if(isNaN(coordinate_yScales[j](0)))
+									y = timeAxisPosition.y1 + coordinate_yScales[j](1);
+								if(_num != 0)
+									d += 'L';
+								d += x + ' ' + y;
+								_num++;
+							}
+							return d;	
+						});
 					d3.select('.user')
 						.selectAll('path')
 						.data(userData)

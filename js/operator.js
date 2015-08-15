@@ -34,6 +34,61 @@ operator.constructSegements = function(data, timeSeq, index2Cluster, cluster2Ind
 	}
 	return allSegements;
 };
+operator.constructFadeSegements = function(data, timeSeq, index2Cluster, cluster2Index){
+	var allSegements = [];
+	for (var index = 0; index < data.length; index++) {
+		for (var timeIndex = 0; timeIndex < timeSeq.length - 1; timeIndex++) {
+			var count = 0;
+			for(var nextId in data[index][timeSeq[timeIndex]]['output']){
+				count += parseInt(data[index][timeSeq[timeIndex]]['output'][nextId])
+			}
+			if(parseInt(data[index][timeSeq[timeIndex]]['size']) - count > 0){
+				var node1 = new Node();
+				var node2 = new Node();
+				var segement = new Segement();
+				node1.clusterId = index2Cluster[index];
+				node2.clusterId = -1;
+				node1.x = timeIndex;
+				node2.x = timeIndex + 1;
+				node1.yOutputTop = data[index][timeSeq[timeIndex]].pOut;
+				node1.yOutputEnd = 1;
+				node2.size = parseInt(data[index][timeSeq[timeIndex]]['size']) - count;
+				segement.node1 = node1;
+				segement.node2 = node2;
+				allSegements.push(segement);
+			}
+		}
+	}
+	return allSegements;	
+};
+operator.constructEmergeSegements = function(data, timeSeq, index2Cluster, cluster2Index){
+	var allSegements = [];
+	for (var index = 0; index < data.length; index++) {
+		for (var timeIndex = 1; timeIndex < timeSeq.length; timeIndex++) {
+			var count = 0;
+			for(var preId in data[index][timeSeq[timeIndex]]['input']){
+				count += parseInt(data[index][timeSeq[timeIndex]]['input'][preId]);
+			}
+			if(parseInt(data[index][timeSeq[timeIndex]]['size']) - count > 0){
+				var node1 = new Node();
+				var node2 = new Node();
+				var segement = new Segement();
+				node1.clusterId = -1;
+				node2.clusterId = index2Cluster[index];
+				node1.x = timeIndex - 1;
+				node2.x = timeIndex;
+				node2.yInputTop = data[index][timeSeq[timeIndex]].pIn;
+				node2.yInputEnd = data[index][timeSeq[timeIndex]].pIn + 1- (parseFloat(count)/parseFloat(data[index][timeSeq[timeIndex]]['size']));
+				data[index][timeSeq[timeIndex]].pIn = node2.yInputEnd;
+				node2.size = parseInt(data[index][timeSeq[timeIndex]]['size']) - count;
+				segement.node1 = node1;
+				segement.node2 = node2;
+				allSegements.push(segement);
+			}
+		}
+	}
+	return allSegements;	
+};
 
 operator.sum4Each = function(arr) {
 	var g = [];
